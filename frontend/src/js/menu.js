@@ -471,6 +471,7 @@ function initMenuCart() {
   })
 
   render()
+  document.addEventListener('panda:cart-change', render)
 
   return {
     render

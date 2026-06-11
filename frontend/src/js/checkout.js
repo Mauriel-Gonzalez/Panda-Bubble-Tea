@@ -231,6 +231,8 @@ function initCheckoutForm() {
 
     cart.saveOrder(order)
     window.open(cart.buildWhatsAppUrl(order), '_blank', 'noopener')
+    cart.clearCart()
+    renderCart()
     cart.showToast('Pedido preparado en WhatsApp.')
   })
 }
@@ -240,4 +242,5 @@ export function initCheckoutPage() {
   initCartActions()
   initDeliverySelector()
   initCheckoutForm()
+  document.addEventListener('panda:cart-change', renderCart)
 }

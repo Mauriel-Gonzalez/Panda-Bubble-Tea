@@ -1,7 +1,12 @@
 const CART_KEY = 'pandaBubbleTeaCart'
+const CART_ACTIVITY_KEY = 'pandaBubbleTeaCartActivity'
 const ORDERS_KEY = 'pandaBubbleTeaOrders'
 const WHATSAPP_PHONE = '50588316431'
 const HERO_SLIDE_DELAY = 3600
+const CART_TTL_MS = 15 * 60 * 1000
+const CART_ACTIVITY_REFRESH_MS = 30 * 1000
+let cartExpirationTimerId
+let lastCartActivityRefresh = 0
 
 function readJson(key, fallback) {
   try {
@@ -16,13 +21,85 @@ function writeJson(key, value) {
   window.localStorage.setItem(key, JSON.stringify(value))
 }
 
+function removeJson(key) {
+  window.localStorage.removeItem(key)
+}
+
+function getStoredCart() {
+  const cart = readJson(CART_KEY, [])
+  return Array.isArray(cart) ? cart : []
+}
+
+function getCartActivityTime() {
+  return Number(readJson(CART_ACTIVITY_KEY, 0)) || 0
+}
+
+function removeStoredCart() {
+  removeJson(CART_KEY)
+  removeJson(CART_ACTIVITY_KEY)
+}
+
+function isStoredCartExpired() {
+  const cart = getStoredCart()
+
+  if (!cart.length) {
+    return false
+  }
+
+  const lastActivity = getCartActivityTime()
+  return !lastActivity || Date.now() - lastActivity > CART_TTL_MS
+}
+
+function notifyCartChanged(reason) {
+  document.dispatchEvent(new CustomEvent('panda:cart-change', {
+    detail: {
+      reason
+    }
+  }))
+}
+
+function clearExpiredCart({ notify = false } = {}) {
+  if (!isStoredCartExpired()) {
+    return false
+  }
+
+  window.clearTimeout(cartExpirationTimerId)
+  removeStoredCart()
+
+  if (notify) {
+    updateCartShortcuts()
+    notifyCartChanged('expired')
+
+    if (document.visibilityState === 'visible') {
+      showToast('El carrito se vació por inactividad.')
+    }
+  }
+
+  return true
+}
+
 function readCart() {
-  return readJson(CART_KEY, [])
+  if (clearExpiredCart()) {
+    return []
+  }
+
+  return getStoredCart()
 }
 
 function writeCart(cart) {
-  writeJson(CART_KEY, cart)
+  const nextCart = Array.isArray(cart) ? cart : []
+
+  writeJson(CART_KEY, nextCart)
+
+  if (nextCart.length) {
+    writeJson(CART_ACTIVITY_KEY, Date.now())
+  } else {
+    removeJson(CART_ACTIVITY_KEY)
+  }
+
   updateCartShortcuts()
+  notifyCartChanged('updated')
+  scheduleCartExpiration()
 }
 
 function normalizeQuantity(value) {
@@ -121,6 +198,79 @@ function removeCartItem(itemId) {
 
 function clearCart() {
   writeCart([])
+}
+
+function refreshCartActivity() {
+  if (clearExpiredCart({ notify: true })) {
+    return
+  }
+
+  if (!getStoredCart().length) {
+    return
+  }
+
+  writeJson(CART_ACTIVITY_KEY, Date.now())
+  scheduleCartExpiration()
+}
+
+function scheduleCartExpiration() {
+  window.clearTimeout(cartExpirationTimerId)
+
+  if (!getStoredCart().length) {
+    return
+  }
+
+  const lastActivity = getCartActivityTime()
+
+  if (!lastActivity) {
+    clearExpiredCart({ notify: true })
+    return
+  }
+
+  const delay = lastActivity + CART_TTL_MS - Date.now()
+
+  if (delay <= 0) {
+    clearExpiredCart({ notify: true })
+    return
+  }
+
+  cartExpirationTimerId = window.setTimeout(() => {
+    if (!clearExpiredCart({ notify: true })) {
+      scheduleCartExpiration()
+    }
+  }, delay + 50)
+}
+
+function initCartExpiration() {
+  clearExpiredCart()
+  scheduleCartExpiration()
+
+  const refreshOnActivity = () => {
+    const now = Date.now()
+
+    if (now - lastCartActivityRefresh < CART_ACTIVITY_REFRESH_MS) {
+      return
+    }
+
+    lastCartActivityRefresh = now
+    refreshCartActivity()
+  }
+
+  const activityEvents = ['click', 'input', 'keydown', 'pointerdown']
+
+  activityEvents.forEach((eventName) => {
+    document.addEventListener(eventName, refreshOnActivity, true)
+  })
+
+  window.addEventListener('scroll', refreshOnActivity, { passive: true })
+  window.addEventListener('storage', (event) => {
+    if (event.key === CART_KEY || event.key === CART_ACTIVITY_KEY) {
+      clearExpiredCart()
+      scheduleCartExpiration()
+      updateCartShortcuts()
+      notifyCartChanged('synced')
+    }
+  })
 }
 
 function readOrders() {
@@ -330,6 +480,7 @@ window.PandaCart = {
 }
 
 updateCartShortcuts()
+initCartExpiration()
 initLandingCartShortcut()
 initHeroCarousel()
 
