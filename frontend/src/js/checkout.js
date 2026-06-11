@@ -232,8 +232,7 @@ function initCheckoutForm() {
     cart.saveOrder(order)
     window.open(cart.buildWhatsAppUrl(order), '_blank', 'noopener')
     cart.clearCart()
-    renderCart()
-    cart.showToast('Pedido preparado en WhatsApp.')
+    window.location.replace('./index.html')
   })
 }
 
