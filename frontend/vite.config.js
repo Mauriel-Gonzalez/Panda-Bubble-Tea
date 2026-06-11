@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'node:path'
 
-const base = process.env.VERCEL ? '/' : '/panda-bubble-tea/'
+const base = process.env.VERCEL ? '/' : '/Panda-Bubble-Tea/'
 
 export default defineConfig({
   base,
