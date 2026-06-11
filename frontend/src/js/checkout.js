@@ -5,7 +5,7 @@ function getCheckoutElements() {
     cartTotal: document.querySelector('[data-cart-total]'),
     checkoutForm: document.querySelector('[data-checkout-form]'),
     checkoutNote: document.querySelector('[data-checkout-note]'),
-    submitOrderButton: document.querySelector('[data-submit-order]'),
+    submitOrderButtons: [...document.querySelectorAll('[data-submit-order]')],
     clearCartButton: document.querySelector('[data-clear-cart]')
   }
 }
@@ -42,9 +42,9 @@ function renderCart() {
   elements.emptyCart.classList.toggle('hidden', items.length > 0)
   elements.cartTotal.textContent = cart.formatCurrency(cart.getCartTotal(items))
 
-  if (elements.submitOrderButton) {
-    elements.submitOrderButton.disabled = items.length === 0
-  }
+  elements.submitOrderButtons.forEach((button) => {
+    button.disabled = items.length === 0
+  })
 
   if (elements.clearCartButton) {
     elements.clearCartButton.disabled = items.length === 0
