@@ -107,8 +107,10 @@ pnpm deploy
 Para producción se recomienda Vercel:
 
 - Conectar el repositorio en Vercel.
-- Usar la configuración incluida en `vercel.json`.
-- Vercel construye `frontend/` y publica `frontend/dist/`.
+- Seleccionar `frontend` como Root Directory.
+- Usar preset Vite.
+- Build Command: `pnpm build`.
+- Output Directory: `dist`.
 
 GitHub Pages sigue disponible como alternativa con:
 
