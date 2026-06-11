@@ -225,10 +225,12 @@ p {
 
 .control:hover,
 .control:focus-visible {
-    border-color: rgb(118 140 122 / 48%);
-    box-shadow: 0 14px 30px rgb(60 60 60 / 14%);
+    backdrop-filter: blur(8px);
+    opacity: 80%;
+    box-shadow: var(--shadow);
     outline: none;
     transform: translateY(-1px);
+    transition: opacity .5s ease;
 }
 
 .navbar {

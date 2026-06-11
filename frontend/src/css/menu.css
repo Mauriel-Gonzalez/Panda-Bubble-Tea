@@ -1,7 +1,7 @@
 .page {
-    --menu-bg: #efe8da;
+    --menu-bg: #F7EDE3;
     --menu-surface: #fffaf4;
-    --menu-green: #768c7a;
+    --menu-green: hsl(from var(--menu-brown) h s 45);
     --menu-brown: #ab845f;
     --menu-ink: #3c3c3c;
     --menu-muted: rgb(60 60 60 / 66%);
@@ -66,7 +66,7 @@
     padding-block: var(--padding-m);
     border: 1px solid var(--menu-border);
     border-radius: var(--br-round);
-    background-color: rgb(255 250 244 / 94%);
+    background-color: var(--color-bg);
     box-shadow: 0 12px 30px rgb(60 60 60 / 8%);
     backdrop-filter: blur(10px);
     transition:

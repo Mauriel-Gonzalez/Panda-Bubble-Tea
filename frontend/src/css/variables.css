@@ -1,13 +1,13 @@
 :root {
-    --color-bg:#EFE8DA;
-    --color-surface: #FFFAF4;
-    --color-border: #E1D3BE;
+    --color-bg:#F7EDE3;
+    --color-surface: #F7EDE3;
+    --color-border: #E8DBC9;
     --color-main-text: #3C3C3C;
     --color-primary-text: var(--color-main-text);
     --color-secondary-text: #797979;
     --color-primary: #AB845F;
     --color-secondary: #F4E6D1;
-    --color-accent: #768C7A;
+    --color-accent: #AB845F;
 
     --br-fullround: 50%;
     --br-round: 4rem;
