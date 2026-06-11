@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://panda-bubble-tea.vercel.app/sitemap.xml

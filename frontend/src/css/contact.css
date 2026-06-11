@@ -204,6 +204,10 @@
     color: var(--color-accent);
 }
 
+.visit-details .visit-detail-plain {
+    padding-inline-start: calc(24px + var(--gap-m));
+}
+
 .contact-footer {
     display: flex;
     flex-wrap: wrap;
