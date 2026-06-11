@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
-  "installCommand": "if [ -d frontend ]; then cd frontend; fi; pnpm install --frozen-lockfile",
-  "buildCommand": "if [ -d frontend ]; then cd frontend && pnpm build; else pnpm build && mkdir -p frontend && cp -R dist frontend/dist; fi",
+  "installCommand": "if [ -d frontend ]; then cd frontend; fi; corepack pnpm install --frozen-lockfile",
+  "buildCommand": "if [ -d frontend ]; then cd frontend && corepack pnpm build; else corepack pnpm build && mkdir -p frontend && cp -R dist frontend/dist; fi",
   "outputDirectory": "frontend/dist"
 }
