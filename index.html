@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Panda Bubble Tea en Estelí, Nicaragua. Explora bebidas, personaliza tu pedido y envíalo por WhatsApp.">
+  <title>Panda Bubble Tea | Pedidos en Estelí</title>
+  <link rel="icon" type="image/svg+xml" href="/Panda-Bubble-Tea/assets/logoPBT-CdzNbQDQ.svg">
+  <script type="module" crossorigin src="/Panda-Bubble-Tea/assets/app-Cn0rs23X.js"></script>
+  <link rel="stylesheet" crossorigin href="/Panda-Bubble-Tea/assets/app-VR2fZOt7.css">
+  <link rel="stylesheet" crossorigin href="/Panda-Bubble-Tea/assets/main-CLenCtso.css">
+  <link rel="stylesheet" crossorigin href="/Panda-Bubble-Tea/assets/modal-BW6mekX0.css">
+</head>
+
+<body>
+  <header>
+    <nav class="row container navbar">
+      <a href="./index.html" aria-label="Panda Bubble Tea inicio">
+        <svg class="logo" aria-hidden="true"></svg>
+      </a>
+
+      <ul class="tabs">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="./menu.html">Menú</a></li>
+        <li><a href="./contact.html">Contacto</a></li>
+      </ul>
+
+      <a href="./checkout.html" class="control control-float" aria-label="Ver carrito">
+        <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M223.5-103.5Q200-127%20200-160t23.5-56.5Q247-240%20280-240t56.5%2023.5Q360-193%20360-160t-23.5%2056.5Q313-80%20280-80t-56.5-23.5Zm400%200Q600-127%20600-160t23.5-56.5Q647-240%20680-240t56.5%2023.5Q760-193%20760-160t-23.5%2056.5Q713-80%20680-80t-56.5-23.5ZM208-800h590q23%200%2035%2020.5t1%2041.5L692-482q-11%2020-29.5%2031T622-440H324l-44%2080h480v80H280q-45%200-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38%2080Z'/%3e%3c/svg%3e&quot;)"></span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero" id="home" data-hero-carousel>
+      <p class="hero-index" data-hero-index>01</p>
+
+      <div class="hero-copy">
+        <p class="hero-kicker" data-hero-category>Smoothie</p>
+        <h1 class="heading-l" data-hero-name>Piña Colada</h1>
+        <p class="drink-desc" data-hero-description>Dulce, cremosa y tropical, con la combinación perfecta de coco y piña refrescante.</p>
+        <a class="control control-primary hero-order" href="./menu.html">
+          Ordenar ahora
+          <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M231-80q-32%200-53.5-24T160-160h163l40-160h80l60-240H210l11-90q4-30%2027-50t53-20h79q8-75%2051.5-117.5T550-880q64%200%20106.5%2047.5T698-720h102q36%200%2060%2027t19%2063l-60%20480q-4%2030-26.5%2050T740-80H231ZM40-240l20-80h220l-20%2080H40Zm80-160%2020-80h260l-20%2080H120Zm340-320h159q1-33-22.5-56.5T540-800q-35%200-55.5%2021.5T460-720Z'/%3e%3c/svg%3e&quot;)"></span>
+        </a>
+      </div>
+
+      <div class="hero-stage" aria-live="polite">
+        <img class="hero-drink is-active" data-hero-slide data-index="0"
+          src="/Panda-Bubble-Tea/assets/pi%C3%B1a-BMBK3pXS.avif" alt="Piña Colada"
+          data-name="Piña Colada"
+          data-category="Smoothie"
+          data-description="Dulce, cremosa y tropical, con la combinación perfecta de coco y piña refrescante.">
+        <img class="hero-drink" data-hero-slide data-index="1"
+          src="/Panda-Bubble-Tea/assets/taro-CBjUOAWW.avif" alt="Milk Tea de Taro"
+          data-name="Milk Tea de Taro"
+          data-category="Milk Tea"
+          data-description="Taro latte con té verde, leche, hielo y boba para una bebida suave, cremosa y muy estética.">
+        <img class="hero-drink" data-hero-slide data-index="2"
+          src="/Panda-Bubble-Tea/assets/fresaM-DYVQfnYG.avif" alt="Fresa Matcha"
+          data-name="Fresa Matcha"
+          data-category="Especial Matcha"
+          data-description="Nube fría de matcha con leche, concentrado de fresa, hielo y boba de sabores.">
+      </div>
+
+      <div class="hero-steps" aria-label="Cómo ordenar">
+        <div class="hero-arrows">
+          <button class="hero-arrow" type="button" data-hero-prev aria-label="Bebida anterior">←</button>
+          <button class="hero-arrow" type="button" data-hero-next aria-label="Bebida siguiente">→</button>
+        </div>
+
+        <div class="hero-step">
+          <span>1. Elige tu bebida</span>
+          <span aria-hidden="true">+</span>
+        </div>
+        <div class="hero-step">
+          <span>2. Personalízala</span>
+          <span aria-hidden="true">+</span>
+        </div>
+        <div class="hero-step">
+          <span>3. Confirma por WhatsApp</span>
+          <span aria-hidden="true">+</span>
+        </div>
+      </div>
+
+      <div class="row hero-dots" aria-hidden="true">
+        <span class="is-active" data-hero-dot></span>
+        <span data-hero-dot></span>
+        <span data-hero-dot></span>
+      </div>
+
+      <img class="stickers sticker-colada" src="data:image/avif;base64,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" alt="" aria-hidden="true"
+        width="24">
+    </section>
+
+    <section class="why-section" id="why-panda">
+      <img class="img product-img" src="/Panda-Bubble-Tea/assets/drinks-DU4sMq9K.avif" alt="Bebidas de Panda Bubble Tea"
+        width="200" height="200">
+
+      <div class="why-copy">
+        <p class="section-kicker">Por qué Panda</p>
+        <h2 class="heading-l">Bebidas hechas para antojos reales</h2>
+        <p>Combinamos frutas, té, café, leche y toppings irresistibles en bebidas frescas, personalizables y fáciles de pedir.</p>
+      </div>
+
+      <div class="why-points">
+        <article>
+          <span>01</span>
+          <h3 class="subheading-s">Rápido</h3>
+          <p class="sm-p">Encuentra tu bebida, personalízala y envía el pedido por WhatsApp.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3 class="subheading-s">Personalizable</h3>
+          <p class="sm-p">Elige tamaño y toppings con el precio claro desde el inicio.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3 class="subheading-s">Cercano</h3>
+          <p class="sm-p">Atención local en Estelí, con retiro en el local o entrega a domicilio.</p>
+        </article>
+      </div>
+
+      <a class="control control-primary why-order" href="./menu.html">
+        Ver menú
+        <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M280-40q-33%200-56.5-23.5T200-120v-720q0-33%2023.5-56.5T280-920h400q33%200%2056.5%2023.5T760-840v124q18%207%2029%2022t11%2034v80q0%2019-11%2034t-29%2022v404q0%2033-23.5%2056.5T680-40H280Zm116-300%20124-124v104h80v-240H360v80h104L340-396l56%2056Z'/%3e%3c/svg%3e&quot;)"></span>
+      </a>
+
+      <img class="stickers sticker-cocktail" src="data:image/avif;base64,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" alt="" aria-hidden="true"
+        width="24">
+    </section>
+
+    <section class="banner-section">
+      <div class="overlay"></div>
+      <h2 class="heading-m banner-text">Tu nuevo lugar favorito para disfrutar <span class="heading-l">bubble tea</span></h2>
+      <img src="/Panda-Bubble-Tea/assets/tropicalDrinks-8qRCkFic.avif" alt="Bebidas tropicales">
+    </section>
+
+    <section class="reviews-section center" id="reviews">
+      <p class="section-kicker">Reseñas</p>
+      <h2 class="heading-l">Qué dicen nuestros clientes</h2>
+
+      <div class="reviews-list">
+        <article class="row first-review">
+          <div class="column review-content">
+            <p>Delicioso y refrescante, sabores muy variados. Buena atención y limpieza del local.</p>
+            <p>ANNE</p>
+          </div>
+          <div class="column review-media">
+            <img class="img review-img" src="/Panda-Bubble-Tea/assets/anne-ClDtkvt5.avif" alt="Cliente disfrutando una bebida"
+              width="100" height="100">
+            <img src="data:image/svg+xml,%3csvg%20width='55'%20height='45'%20viewBox='0%200%2055%2045'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M26.7178%201.5L26.3027%203.33105L22.0547%2022.0859C24.2609%2024.2636%2025.6201%2027.2974%2025.6201%2030.6621C25.6201%2037.2825%2020.1288%2042.626%2013.5596%2042.626C6.99049%2042.6257%201.5%2037.2824%201.5%2030.6621C1.50001%2028.6466%202.02369%2026.6204%202.96875%2024.9541L12.417%202.41992L12.8027%201.5H26.7178ZM52.8779%201.5L52.4629%203.33105L48.2148%2022.0859C50.421%2024.2636%2051.7803%2027.2974%2051.7803%2030.6621C51.7803%2037.2825%2046.289%2042.626%2039.7197%2042.626C33.1506%2042.6258%2027.6602%2037.2824%2027.6602%2030.6621C27.6602%2028.6455%2028.1839%2026.6179%2029.1299%2024.9512L38.6992%202.41406L39.0869%201.5H52.8779Z'%20fill='%23FFC16B'%20stroke='%23F7EDE3'%20stroke-width='3'/%3e%3c/svg%3e" alt="" aria-hidden="true">
+          </div>
+        </article>
+
+        <article class="row first-review">
+          <div class="column review-content">
+            <p>Me encanta que puedo elegir toppings y mandar el pedido rápido. Todo queda claro por WhatsApp.</p>
+            <p>CLARA</p>
+          </div>
+          <div class="column review-media">
+            <img class="img review-img" src="/Panda-Bubble-Tea/assets/clara-C__GhC44.avif" alt="Cliente con bebida de Panda Bubble Tea"
+              width="100" height="100">
+            <img src="data:image/svg+xml,%3csvg%20width='55'%20height='45'%20viewBox='0%200%2055%2045'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M26.7178%201.5L26.3027%203.33105L22.0547%2022.0859C24.2609%2024.2636%2025.6201%2027.2974%2025.6201%2030.6621C25.6201%2037.2825%2020.1288%2042.626%2013.5596%2042.626C6.99049%2042.6257%201.5%2037.2824%201.5%2030.6621C1.50001%2028.6466%202.02369%2026.6204%202.96875%2024.9541L12.417%202.41992L12.8027%201.5H26.7178ZM52.8779%201.5L52.4629%203.33105L48.2148%2022.0859C50.421%2024.2636%2051.7803%2027.2974%2051.7803%2030.6621C51.7803%2037.2825%2046.289%2042.626%2039.7197%2042.626C33.1506%2042.6258%2027.6602%2037.2824%2027.6602%2030.6621C27.6602%2028.6455%2028.1839%2026.6179%2029.1299%2024.9512L38.6992%202.41406L39.0869%201.5H52.8779Z'%20fill='%23FFC16B'%20stroke='%23F7EDE3'%20stroke-width='3'/%3e%3c/svg%3e" alt="" aria-hidden="true">
+          </div>
+        </article>
+
+        <article class="row first-review">
+          <div class="column review-content">
+            <p>Las bebidas se ven lindas, saben frescas y el proceso para ordenar es súper fácil.</p>
+            <p>CRIS</p>
+          </div>
+          <div class="column review-media">
+            <img class="img review-img" src="/Panda-Bubble-Tea/assets/cris-BJZVPQb5.avif" alt="Cliente disfrutando bubble tea"
+              width="100" height="100">
+            <img src="data:image/svg+xml,%3csvg%20width='55'%20height='45'%20viewBox='0%200%2055%2045'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M26.7178%201.5L26.3027%203.33105L22.0547%2022.0859C24.2609%2024.2636%2025.6201%2027.2974%2025.6201%2030.6621C25.6201%2037.2825%2020.1288%2042.626%2013.5596%2042.626C6.99049%2042.6257%201.5%2037.2824%201.5%2030.6621C1.50001%2028.6466%202.02369%2026.6204%202.96875%2024.9541L12.417%202.41992L12.8027%201.5H26.7178ZM52.8779%201.5L52.4629%203.33105L48.2148%2022.0859C50.421%2024.2636%2051.7803%2027.2974%2051.7803%2030.6621C51.7803%2037.2825%2046.289%2042.626%2039.7197%2042.626C33.1506%2042.6258%2027.6602%2037.2824%2027.6602%2030.6621C27.6602%2028.6455%2028.1839%2026.6179%2029.1299%2024.9512L38.6992%202.41406L39.0869%201.5H52.8779Z'%20fill='%23FFC16B'%20stroke='%23F7EDE3'%20stroke-width='3'/%3e%3c/svg%3e" alt="" aria-hidden="true">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="column footer" id="contact">
+      <div class="footer-heading">
+        <p class="section-kicker">Contacto</p>
+        <h2 class="heading-m">Haz tu pedido o síguenos en redes</h2>
+      </div>
+
+      <div class="row media-icons">
+        <a href="https://www.instagram.com/pandabubbleteanic/" class="control control-float" aria-label="Instagram"
+          target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_46_455)'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M21.75%207.125C21.75%204.43437%2019.566%202.25%2016.875%202.25H7.125C4.43437%202.25%202.25%204.43437%202.25%207.125V16.875C2.25%2019.566%204.43437%2021.75%207.125%2021.75H16.875C19.566%2021.75%2021.75%2019.566%2021.75%2016.875V7.125ZM19.125%207.5C19.125%206.05137%2017.949%204.875%2016.5%204.875H7.5C6.05137%204.875%204.875%206.05137%204.875%207.5V16.5C4.875%2017.949%206.05137%2019.125%207.5%2019.125H16.5C17.949%2019.125%2019.125%2017.949%2019.125%2016.5V7.5ZM18.375%207.5V16.5C18.375%2017.535%2017.535%2018.375%2016.5%2018.375H7.5C6.465%2018.375%205.625%2017.535%205.625%2016.5V7.5C5.625%206.465%206.465%205.625%207.5%205.625H16.5C17.535%205.625%2018.375%206.465%2018.375%207.5ZM12%209C13.656%209%2015%2010.3444%2015%2012C15%2013.656%2013.656%2015%2012%2015C10.3444%2015%209%2013.656%209%2012C9%2010.3444%2010.3444%209%2012%209ZM16.125%207.125C16.324%207.125%2016.5149%207.20406%2016.6556%207.34478C16.7963%207.4855%2016.8754%207.67636%2016.8754%207.87537C16.8754%208.07439%2016.7963%208.26525%2016.6556%208.40597C16.5149%208.54669%2016.324%208.62575%2016.125%208.62575C15.926%208.62575%2015.7351%208.54669%2015.5944%208.40597C15.4537%208.26525%2015.3746%208.07439%2015.3746%207.87537C15.3746%207.67636%2015.4537%207.4855%2015.5944%207.34478C15.7351%207.20406%2015.926%207.125%2016.125%207.125Z'%20fill='%233C3C3C'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_46_455'%3e%3crect%20width='24'%20height='24'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e&quot;)"></span>
+        </a>
+        <a href="https://www.facebook.com/people/Panda-Bubble-Tea/61577708530417/" class="control control-float"
+          aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_46_459)'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M11.25%2021.75V13.875H8.625V11.25H11.25V8.625C11.25%206.96938%2012.5948%205.625%2014.25%205.625H17.625V8.25H15.75C14.9224%208.25%2014.25%208.922%2014.25%209.75L14.2035%2011.25H17.625L17.25%2013.875H14.25V21.75H18.375C20.2376%2021.75%2021.75%2020.238%2021.75%2018.375V5.625C21.75%203.76237%2020.2376%202.25%2018.375%202.25H5.625C3.762%202.25%202.25%203.76237%202.25%205.625V18.375C2.25%2020.238%203.762%2021.75%205.625%2021.75H11.25Z'%20fill='%233C3C3C'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_46_459'%3e%3crect%20width='24'%20height='24'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e&quot;)"></span>
+        </a>
+        <a href="https://www.tiktok.com/@panda_bubbleteanic" class="control control-float" aria-label="TikTok"
+          target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_46_463)'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M12.375%202.25037C12.2755%202.25037%2012.1802%202.28988%2012.1098%202.3602C12.0395%202.43053%2012%202.52591%2012%202.62537V16.1254C12%2017.1604%2011.16%2018.0004%2010.125%2018.0004C9.09%2018.0004%208.25%2017.1604%208.25%2016.1254C8.25%2015.0904%209.09%2014.2504%2010.125%2014.2504C10.2245%2014.2504%2010.3198%2014.2109%2010.3902%2014.1405C10.4605%2014.0702%2010.5%2013.9748%2010.5%2013.8754V10.8754C10.5%2010.7759%2010.4605%2010.6805%2010.3902%2010.6102C10.3198%2010.5399%2010.2245%2010.5004%2010.125%2010.5004C7.02%2010.5004%204.5%2013.0207%204.5%2016.1254C4.5%2019.2304%207.02%2021.7504%2010.125%2021.7504C13.2296%2021.7504%2015.75%2019.2304%2015.75%2016.1254V9.18562C16.5747%209.55889%2017.4697%209.75145%2018.375%209.75037H19.125C19.2245%209.75037%2019.3198%209.71086%2019.3902%209.64053C19.4605%209.57021%2019.5%209.47482%2019.5%209.37537V6.37537C19.5%206.27591%2019.4605%206.18053%2019.3902%206.1102C19.3198%206.03988%2019.2245%206.00037%2019.125%206.00037H18.375C16.9264%206.00037%2015.75%204.82399%2015.75%203.37537V2.62537C15.75%202.52591%2015.7105%202.43053%2015.6402%202.3602C15.5698%202.28988%2015.4745%202.25037%2015.375%202.25037H12.375Z'%20fill='%233C3C3C'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_46_463'%3e%3crect%20width='24'%20height='24'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e&quot;)"></span>
+        </a>
+        <a href="https://wa.me/50588316431?text=Hola,%20quiero%20hacer%20un%20pedido." class="control control-float"
+          aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_46_467)'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M3.66749%2017.0625L2.26949%2021.2569C2.24761%2021.3229%202.24452%2021.3938%202.26057%2021.4615C2.27662%2021.5292%202.31118%2021.5911%202.36039%2021.6404C2.4096%2021.6896%202.47152%2021.7241%202.53924%2021.7402C2.60696%2021.7562%202.6778%2021.7531%202.74387%2021.7313L6.93824%2020.3325C8.46292%2021.2621%2010.2147%2021.7526%2012.0004%2021.75C17.3816%2021.75%2021.7504%2017.3813%2021.7504%2012C21.7504%206.61875%2017.3816%202.25%2012.0004%202.25C6.61912%202.25%202.25037%206.61875%202.25037%2012C2.25037%2013.8536%202.76862%2015.5869%203.66749%2017.0625ZM14.244%2013.4689L12.9184%2014.7949C12.5085%2015.2044%2011.4454%2014.9126%2010.2667%2013.7336C9.08812%2012.5554%208.79637%2011.4919%209.20587%2011.0824L10.5319%209.75638L9.81374%208.08013C9.71715%207.85484%209.56682%207.65665%209.37591%207.50291C9.18499%207.34917%208.95931%207.24456%208.71861%207.19824C8.4779%207.15191%208.22952%207.16528%207.99517%207.23717C7.76083%207.30906%207.54768%207.43729%207.37437%207.61063L6.71362%208.27138C5.30849%209.67613%206.18787%2012.837%208.67562%2015.3251C11.1637%2017.8129%2014.3242%2018.6923%2015.7294%2017.2871L16.3897%2016.6264C16.5633%2016.4531%2016.6916%2016.24%2016.7636%2016.0056C16.8356%2015.7712%2016.849%2015.5228%2016.8027%2015.282C16.7564%2015.0413%2016.6517%2014.8155%2016.4978%2014.6246C16.344%2014.4337%2016.1457%2014.2835%2015.9202%2014.187L14.244%2013.4689Z'%20fill='%233C3C3C'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_46_467'%3e%3crect%20width='24'%20height='24'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e&quot;)"></span>
+        </a>
+      </div>
+
+      <div class="footer-info">
+        <p><strong>Estelí</strong> · De la calle de los bancos 1 cuadra al oeste.</p>
+        <p>Lunes a sábado · 11:00 AM - 08:00 PM</p>
+      </div>
+
+      <p class="sm-p">Panda Bubble Tea · Todos los derechos reservados © 2026</p>
+      <img class="stickers sticker-panda" src="/Panda-Bubble-Tea/assets/panda-rAwkPMGQ.avif" alt="" aria-hidden="true" width="24">
+    </footer>
+  </main>
+
+</body>
+
+</html>

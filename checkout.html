@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Revisa tu carrito de Panda Bubble Tea y envía tu pedido por WhatsApp.">
+    <title>Pedido | Panda Bubble Tea</title>
+    <link rel="icon" type="image/svg+xml" href="/Panda-Bubble-Tea/assets/logoPBT-CdzNbQDQ.svg">
+  <script type="module" crossorigin src="/Panda-Bubble-Tea/assets/app-Cn0rs23X.js"></script>
+  <link rel="stylesheet" crossorigin href="/Panda-Bubble-Tea/assets/app-VR2fZOt7.css">
+  <link rel="stylesheet" crossorigin href="/Panda-Bubble-Tea/assets/checkout-C_Z2Avh6.css">
+  <link rel="stylesheet" crossorigin href="/Panda-Bubble-Tea/assets/menu-pPZTaIJw.css">
+  <link rel="stylesheet" crossorigin href="/Panda-Bubble-Tea/assets/modal-BW6mekX0.css">
+</head>
+
+<body data-checkout-page>
+    <header>
+        <nav class="row container navbar">
+            <a href="./index.html" aria-label="Panda Bubble Tea inicio">
+                <svg class="logo" aria-hidden="true"></svg>
+            </a>
+
+            <a href="./menu.html" class="control control-primary">
+                Menú
+                <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M160-120v-80h640v80H160Zm560-520h80v-120h-80v120ZM320-280q-66%200-113-47t-47-113v-400h200v96l-72%2058q-2%202-8%2016v170q0%208%206%2014t14%206h160q8%200%2014-6t6-14v-170q0-2-8-16l-72-58v-96h400q33%200%2056.5%2023.5T880-760v120q0%2033-23.5%2056.5T800-560h-80v120q0%2066-47%20113t-113%2047H320Z'/%3e%3c/svg%3e&quot;)"></span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="page checkout-page">
+        <section class="row page-header">
+            <a href="./menu.html">
+                <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M440-80q-50-5-96-24.5T256-156l56-58q29%2021%2061.5%2034t66.5%2018v82Zm80%200v-82q104-15%20172-93.5T760-438q0-117-81.5-198.5T480-718h-8l64%2064-56%2056-160-160%20160-160%2056%2058-62%2062h6q75%200%20140.5%2028.5t114%2077q48.5%2048.5%2077%20114T840-438q0%20137-91%20238.5T520-80ZM198-214q-32-42-51.5-88T122-398h82q5%2034%2018%2066.5t34%2061.5l-58%2056Zm-76-264q6-51%2025-98t51-86l58%2056q-21%2029-34%2061.5T204-478h-82Z'/%3e%3c/svg%3e&quot;)"></span>
+            </a>
+            <h1 class="heading-l">Resumen del pedido</h1>
+        </section>
+
+        <section class="checkout-grid">
+            <section class="drink-section checkout-card" aria-labelledby="cart-heading">
+                <header class="drink-heading">
+                    <h2 class="subheading-l" id="cart-heading">Carrito</h2>
+                    <span class="sm-p" data-cart-total>C$ 0</span>
+                </header>
+
+                <p class="sm-p hidden" data-empty-cart>No hay productos en el carrito.</p>
+                <div class="cart-list" data-cart-list></div>
+
+                <div class="row checkout-actions">
+                    <a class="control" href="./menu.html">Agregar más</a>
+                    <button class="control" type="button" data-clear-cart>Vaciar carrito</button>
+                </div>
+            </section>
+
+            <section class="drink-section checkout-card" aria-labelledby="customer-heading">
+                <header class="drink-heading">
+                    <h2 class="subheading-l" id="customer-heading">Datos de entrega</h2>
+                </header>
+
+                <form class="column checkout-form" data-checkout-form>
+                    <label class="search-form checkout-field">
+                        <input class="input" type="text" name="name" placeholder="Nombre" required>
+                        <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M200-120q-33%200-56.5-23.5T120-200v-560q0-33%2023.5-56.5T200-840h168q14-36%2044-58t68-22q38%200%2068%2022t44%2058h168q33%200%2056.5%2023.5T840-760v560q0%2033-23.5%2056.5T760-120H200Zm301.5-678.5Q510-807%20510-820t-8.5-21.5Q493-850%20480-850t-21.5%208.5Q450-833%20450-820t8.5%2021.5Q467-790%20480-790t21.5-8.5ZM579-481q41-41%2041-99t-41-99q-41-41-99-41t-99%2041q-41%2041-41%2099t41%2099q41%2041%2099%2041t99-41ZM200-200h560v-46q-54-53-125.5-83.5T480-360q-83%200-154.5%2030.5T200-246v46Z'/%3e%3c/svg%3e&quot;)"></span>
+                    </label>
+
+                    <label class="search-form checkout-field">
+                        <input class="input" type="tel" name="phone" placeholder="WhatsApp" inputmode="numeric"
+                            pattern="[0-9\s-]{8,14}" required>
+                        <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M798-120q-125%200-247-54.5T329-329Q229-429%20174.5-551T120-798q0-18%2012-30t30-12h162q14%200%2025%209.5t13%2022.5l26%20140q2%2016-1%2027t-11%2019l-97%2098q20%2037%2047.5%2071.5T387-386q31%2031%2065%2057.5t72%2048.5l94-94q9-9%2023.5-13.5T670-390l138%2028q14%204%2023%2014.5t9%2023.5v162q0%2018-12%2030t-30%2012Z'/%3e%3c/svg%3e&quot;)"></span>
+                    </label>
+
+                    <div class="checkout-delivery" data-delivery-select>
+                        <input type="hidden" name="delivery" value="Retiro en el local" data-delivery-input>
+                        <button class="search-form checkout-field checkout-delivery-trigger" type="button"
+                            data-delivery-trigger aria-haspopup="listbox" aria-expanded="false">
+                            <span data-delivery-label>Retiro en el local</span>
+                            <span class="icon checkout-select-icon"
+                                style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M480-344%20240-584l56-56%20184%20184%20184-184%2056%2056-240%20240Z'/%3e%3c/svg%3e&quot;)" aria-hidden="true"></span>
+                        </button>
+
+                        <div class="checkout-delivery-options hidden" role="listbox" data-delivery-options>
+                            <button type="button" role="option" data-delivery-option value="Retiro en el local"
+                                aria-selected="true">Retiro en el local</button>
+                            <button type="button" role="option" data-delivery-option value="Entrega a Domicilio"
+                                aria-selected="false">Entrega a Domicilio</button>
+                        </div>
+                    </div>
+
+                    <label class="search-form checkout-field">
+                        <input class="input" type="text" name="address" placeholder="Referencia o dirección">
+                        <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20height='24px'%20viewBox='0%20-960%20960%20960'%20width='24px'%20fill='%23e3e3e3'%3e%3cpath%20d='M536.5-503.5Q560-527%20560-560t-23.5-56.5Q513-640%20480-640t-56.5%2023.5Q400-593%20400-560t23.5%2056.5Q447-480%20480-480t56.5-23.5ZM480-80Q319-217%20239.5-334.5T160-552q0-150%2096.5-239T480-880q127%200%20223.5%2089T800-552q0%20100-79.5%20217.5T480-80Z'/%3e%3c/svg%3e&quot;)"></span>
+                    </label>
+
+                    <p class="sm-p" data-checkout-note>Confirmaremos disponibilidad y entrega por WhatsApp.</p>
+
+                    <button class="control control-primary checkout-submit" type="submit" data-submit-order>
+                        Enviar por WhatsApp
+                        <span class="icon" style="--icon: url(&quot;data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_46_467)'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M3.66749%2017.0625L2.26949%2021.2569C2.24761%2021.3229%202.24452%2021.3938%202.26057%2021.4615C2.27662%2021.5292%202.31118%2021.5911%202.36039%2021.6404C2.4096%2021.6896%202.47152%2021.7241%202.53924%2021.7402C2.60696%2021.7562%202.6778%2021.7531%202.74387%2021.7313L6.93824%2020.3325C8.46292%2021.2621%2010.2147%2021.7526%2012.0004%2021.75C17.3816%2021.75%2021.7504%2017.3813%2021.7504%2012C21.7504%206.61875%2017.3816%202.25%2012.0004%202.25C6.61912%202.25%202.25037%206.61875%202.25037%2012C2.25037%2013.8536%202.76862%2015.5869%203.66749%2017.0625ZM14.244%2013.4689L12.9184%2014.7949C12.5085%2015.2044%2011.4454%2014.9126%2010.2667%2013.7336C9.08812%2012.5554%208.79637%2011.4919%209.20587%2011.0824L10.5319%209.75638L9.81374%208.08013C9.71715%207.85484%209.56682%207.65665%209.37591%207.50291C9.18499%207.34917%208.95931%207.24456%208.71861%207.19824C8.4779%207.15191%208.22952%207.16528%207.99517%207.23717C7.76083%207.30906%207.54768%207.43729%207.37437%207.61063L6.71362%208.27138C5.30849%209.67613%206.18787%2012.837%208.67562%2015.3251C11.1637%2017.8129%2014.3242%2018.6923%2015.7294%2017.2871L16.3897%2016.6264C16.5633%2016.4531%2016.6916%2016.24%2016.7636%2016.0056C16.8356%2015.7712%2016.849%2015.5228%2016.8027%2015.282C16.7564%2015.0413%2016.6517%2014.8155%2016.4978%2014.6246C16.344%2014.4337%2016.1457%2014.2835%2015.9202%2014.187L14.244%2013.4689Z'%20fill='%233C3C3C'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_46_467'%3e%3crect%20width='24'%20height='24'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e&quot;)"></span>
+                    </button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+</body>
+
+</html>
