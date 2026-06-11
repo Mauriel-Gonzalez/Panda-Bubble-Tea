@@ -399,30 +399,6 @@
     line-height: 1.45;
 }
 
-.stickers {
-    position: absolute;
-    pointer-events: none;
-}
-
-.sticker-colada {
-    top: 1rem;
-    left: 0.5rem;
-    transform: rotate(-20deg);
-}
-
-.sticker-cocktail {
-    right: 2rem;
-    bottom: 1rem;
-    transform: rotate(20deg);
-}
-
-.sticker-panda {
-    top: var(--padding-l);
-    left: clamp(1rem, 6vw, 4rem);
-    opacity: 0.72;
-    transform: rotate(-12deg);
-}
-
 @media (width >= 700px) {
     .navbar {
         flex-wrap: nowrap;
