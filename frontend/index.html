@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Panda Bubble Tea en Estelí, Nicaragua. Explora bebidas, personaliza tu pedido y envíalo por WhatsApp.">
+  <title>Panda Bubble Tea | Pedidos en Estelí</title>
+  <link rel="icon" type="image/svg+xml" href="/src/assets/icons/logoPBT.svg">
+  <link rel="stylesheet" href="/src/css/global.css">
+  <link rel="stylesheet" href="/src/css/landing.css">
+  <link rel="stylesheet" href="/src/css/modal.css">
+  <script type="module" src="/src/js/app.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="row container navbar">
+      <a href="./index.html" aria-label="Panda Bubble Tea inicio">
+        <svg class="logo" aria-hidden="true"></svg>
+      </a>
+
+      <ul class="tabs">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="./menu.html">Menú</a></li>
+        <li><a href="./contact.html">Contacto</a></li>
+      </ul>
+
+      <a href="./checkout.html" class="control control-float" aria-label="Ver carrito">
+        <span class="icon" style="--icon: url('/src/assets/icons/ui/shoppingCart.svg')"></span>
+      </a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero" id="home" data-hero-carousel>
+      <p class="hero-index" data-hero-index>01</p>
+
+      <div class="hero-copy">
+        <p class="hero-kicker" data-hero-category>Smoothie</p>
+        <h1 class="heading-l" data-hero-name>Piña Colada</h1>
+        <p class="drink-desc" data-hero-description>Dulce, cremosa y tropical, con la combinación perfecta de coco y piña refrescante.</p>
+        <a class="control control-primary hero-order" href="./menu.html">
+          Ordenar ahora
+          <span class="icon" style="--icon: url('/src/assets/icons/ui/shoppingBag.svg')"></span>
+        </a>
+      </div>
+
+      <div class="hero-stage" aria-live="polite">
+        <img class="hero-drink is-active" data-hero-slide data-index="0"
+          src="/src/assets/images/drinks/smoothies/piña.avif" alt="Piña Colada"
+          data-name="Piña Colada"
+          data-category="Smoothie"
+          data-description="Dulce, cremosa y tropical, con la combinación perfecta de coco y piña refrescante.">
+        <img class="hero-drink" data-hero-slide data-index="1"
+          src="/src/assets/images/drinks/milkTeas/taro.avif" alt="Milk Tea de Taro"
+          data-name="Milk Tea de Taro"
+          data-category="Milk Tea"
+          data-description="Taro latte con té verde, leche, hielo y boba para una bebida suave, cremosa y muy estética.">
+        <img class="hero-drink" data-hero-slide data-index="2"
+          src="/src/assets/images/drinks/matchas/fresaM.avif" alt="Fresa Matcha"
+          data-name="Fresa Matcha"
+          data-category="Especial Matcha"
+          data-description="Nube fría de matcha con leche, concentrado de fresa, hielo y boba de sabores.">
+      </div>
+
+      <div class="hero-steps" aria-label="Cómo ordenar">
+        <div class="hero-arrows">
+          <button class="hero-arrow" type="button" data-hero-prev aria-label="Bebida anterior">←</button>
+          <button class="hero-arrow" type="button" data-hero-next aria-label="Bebida siguiente">→</button>
+        </div>
+
+        <div class="hero-step">
+          <span>1. Elige tu bebida</span>
+          <span aria-hidden="true">+</span>
+        </div>
+        <div class="hero-step">
+          <span>2. Personalízala</span>
+          <span aria-hidden="true">+</span>
+        </div>
+        <div class="hero-step">
+          <span>3. Confirma por WhatsApp</span>
+          <span aria-hidden="true">+</span>
+        </div>
+      </div>
+
+      <div class="row hero-dots" aria-hidden="true">
+        <span class="is-active" data-hero-dot></span>
+        <span data-hero-dot></span>
+        <span data-hero-dot></span>
+      </div>
+
+      <img class="stickers sticker-colada" src="/src/assets/images/stickers/ui/colada.avif" alt="" aria-hidden="true"
+        width="24">
+    </section>
+
+    <section class="why-section" id="why-panda">
+      <img class="img product-img" src="/src/assets/images/landing/drinks.avif" alt="Bebidas de Panda Bubble Tea"
+        width="200" height="200">
+
+      <div class="why-copy">
+        <p class="section-kicker">Por qué Panda</p>
+        <h2 class="heading-l">Bebidas hechas para antojos reales</h2>
+        <p>Combinamos frutas, té, café, leche y toppings irresistibles en bebidas frescas, personalizables y fáciles de pedir.</p>
+      </div>
+
+      <div class="why-points">
+        <article>
+          <span>01</span>
+          <h3 class="subheading-s">Rápido</h3>
+          <p class="sm-p">Encuentra tu bebida, personalízala y envía el pedido por WhatsApp.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3 class="subheading-s">Personalizable</h3>
+          <p class="sm-p">Elige tamaño y toppings con el precio claro desde el inicio.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3 class="subheading-s">Cercano</h3>
+          <p class="sm-p">Atención local en Estelí, con retiro en el local o entrega a domicilio.</p>
+        </article>
+      </div>
+
+      <a class="control control-primary why-order" href="./menu.html">
+        Ver menú
+        <span class="icon" style="--icon: url('/src/assets/icons/ui/mobileUp.svg')"></span>
+      </a>
+
+      <img class="stickers sticker-cocktail" src="/src/assets/images/stickers/ui/cocktail.avif" alt="" aria-hidden="true"
+        width="24">
+    </section>
+
+    <section class="banner-section">
+      <div class="overlay"></div>
+      <h2 class="heading-m banner-text">Tu nuevo lugar favorito para disfrutar <span class="heading-l">bubble tea</span></h2>
+      <img src="/src/assets/images/landing/tropicalDrinks.avif" alt="Bebidas tropicales">
+    </section>
+
+    <section class="reviews-section center" id="reviews">
+      <p class="section-kicker">Reseñas</p>
+      <h2 class="heading-l">Qué dicen nuestros clientes</h2>
+
+      <div class="reviews-list">
+        <article class="row first-review">
+          <div class="column review-content">
+            <p>Delicioso y refrescante, sabores muy variados. Buena atención y limpieza del local.</p>
+            <p>ANNE</p>
+          </div>
+          <div class="column review-media">
+            <img class="img review-img" src="/src/assets/images/landing/anne.avif" alt="Cliente disfrutando una bebida"
+              width="100" height="100">
+            <img src="/src/assets/images/landing/quotes.svg" alt="" aria-hidden="true">
+          </div>
+        </article>
+
+        <article class="row first-review">
+          <div class="column review-content">
+            <p>Me encanta que puedo elegir toppings y mandar el pedido rápido. Todo queda claro por WhatsApp.</p>
+            <p>CLARA</p>
+          </div>
+          <div class="column review-media">
+            <img class="img review-img" src="/src/assets/images/landing/clara.avif" alt="Cliente con bebida de Panda Bubble Tea"
+              width="100" height="100">
+            <img src="/src/assets/images/landing/quotes.svg" alt="" aria-hidden="true">
+          </div>
+        </article>
+
+        <article class="row first-review">
+          <div class="column review-content">
+            <p>Las bebidas se ven lindas, saben frescas y el proceso para ordenar es súper fácil.</p>
+            <p>CRIS</p>
+          </div>
+          <div class="column review-media">
+            <img class="img review-img" src="/src/assets/images/landing/cris.avif" alt="Cliente disfrutando bubble tea"
+              width="100" height="100">
+            <img src="/src/assets/images/landing/quotes.svg" alt="" aria-hidden="true">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="column footer" id="contact">
+      <div class="footer-heading">
+        <p class="section-kicker">Contacto</p>
+        <h2 class="heading-m">Haz tu pedido o síguenos en redes</h2>
+      </div>
+
+      <div class="row media-icons">
+        <a href="https://www.instagram.com/pandabubbleteanic/" class="control control-float" aria-label="Instagram"
+          target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="--icon: url('/src/assets/icons/social/instagram.svg')"></span>
+        </a>
+        <a href="https://www.facebook.com/people/Panda-Bubble-Tea/61577708530417/" class="control control-float"
+          aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="--icon: url('/src/assets/icons/social/facebook.svg')"></span>
+        </a>
+        <a href="https://www.tiktok.com/@panda_bubbleteanic" class="control control-float" aria-label="TikTok"
+          target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="--icon: url('/src/assets/icons/social/tiktok.svg')"></span>
+        </a>
+        <a href="https://wa.me/50588316431?text=Hola,%20quiero%20hacer%20un%20pedido." class="control control-float"
+          aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+          <span class="icon" style="--icon: url('/src/assets/icons/social/whatsapp.svg')"></span>
+        </a>
+      </div>
+
+      <div class="footer-info">
+        <p><strong>Estelí</strong> · De la calle de los bancos 1 cuadra al oeste.</p>
+        <p>Lunes a sábado · 11:00 AM - 08:00 PM</p>
+      </div>
+
+      <p class="sm-p">Panda Bubble Tea · Todos los derechos reservados © 2026</p>
+      <img class="stickers sticker-panda" src="/src/assets/images/stickers/ui/panda.avif" alt="" aria-hidden="true" width="24">
+    </footer>
+  </main>
+
+</body>
+
+</html>

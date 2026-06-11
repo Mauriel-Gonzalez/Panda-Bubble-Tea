@@ -1,0 +1,219 @@
+.checkout-page {
+    align-items: stretch;
+}
+
+.checkout-grid {
+    display: grid;
+    gap: var(--section-space);
+    width: 100%;
+}
+
+.checkout-card {
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--br-semiround);
+    padding: var(--padding-l);
+}
+
+.checkout-card > * {
+    min-width: 0;
+}
+
+.checkout-card .drink-heading {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-list {
+    display: grid;
+    gap: var(--stack-space);
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    grid-template-areas:
+        "image content"
+        "image price";
+    gap: var(--gap-m);
+    align-items: center;
+}
+
+.cart-item-img {
+    grid-area: image;
+    width: 88px;
+    height: 104px;
+}
+
+.cart-item-content {
+    grid-area: content;
+    min-width: 0;
+}
+
+.cart-item-heading {
+    text-align: left;
+}
+
+.cart-item-heading .subheading-s {
+    line-height: 1.12;
+}
+
+.cart-item-actions {
+    flex-wrap: wrap;
+}
+
+.quantity-btn {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    color: #768c7a;
+    font-weight: var(--fw-semi);
+    font-size: var(--fs-h5);
+}
+
+.cart-item .price {
+    grid-area: price;
+    justify-self: start;
+}
+
+.checkout-actions {
+    flex-wrap: wrap;
+}
+
+.checkout-form {
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+}
+
+.checkout-form > * {
+    min-width: 0;
+}
+
+.checkout-field {
+    position: relative;
+    top: auto;
+    z-index: auto;
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    box-sizing: border-box;
+}
+
+.checkout-field .icon,
+.checkout-select-icon {
+    color: #768c7a;
+}
+
+.checkout-delivery {
+    position: relative;
+    min-width: 0;
+}
+
+.checkout-delivery-trigger {
+    justify-content: space-between;
+    color: var(--color-main-text);
+    cursor: pointer;
+    font: inherit;
+}
+
+.checkout-delivery-trigger [data-delivery-label] {
+    min-width: 0;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.checkout-delivery-trigger[aria-expanded="true"] .checkout-select-icon {
+    transform: rotate(180deg);
+}
+
+.checkout-select-icon {
+    pointer-events: none;
+    transition: transform var(--transition-fast);
+}
+
+.checkout-delivery-options {
+    position: absolute;
+    inset-inline: 0;
+    top: calc(100% + 0.45rem);
+    z-index: 20;
+    display: grid;
+    gap: var(--padding-s);
+    padding: var(--padding-s);
+    border: 1px solid var(--color-border);
+    border-radius: var(--br-semiround);
+    background-color: #fffaf4;
+    box-shadow: 0 16px 34px rgb(60 60 60 / 14%);
+}
+
+.checkout-delivery-options.hidden {
+    display: none;
+}
+
+.checkout-delivery-options button {
+    min-height: 46px;
+    padding: var(--padding-m) var(--padding-l);
+    border: 1px solid transparent;
+    border-radius: var(--br-round);
+    background-color: transparent;
+    color: var(--color-main-text);
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.checkout-delivery-options button:hover,
+.checkout-delivery-options button:focus-visible,
+.checkout-delivery-options button[aria-selected="true"] {
+    border-color: rgb(118 140 122 / 34%);
+    background-color: rgb(118 140 122 / 14%);
+    color: #768c7a;
+    outline: none;
+}
+
+.checkout-submit {
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+    gap: 0.5rem;
+    padding-inline: var(--padding-m);
+    font-size: var(--fs-p);
+    white-space: nowrap;
+}
+
+.checkout-actions .control:disabled,
+.checkout-submit:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+@media (width >= 620px) {
+    .cart-item {
+        grid-template-columns: 104px minmax(0, 1fr) auto;
+        grid-template-areas: "image content price";
+    }
+
+    .cart-item-img {
+        width: 104px;
+        height: 128px;
+    }
+
+    .cart-item .price {
+        justify-self: end;
+    }
+}
+
+@media (width >= 900px) {
+    .checkout-grid {
+        grid-template-columns: minmax(420px, 1fr) minmax(280px, 0.62fr);
+        align-items: start;
+    }
+}

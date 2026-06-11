@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Revisa tu carrito de Panda Bubble Tea y envía tu pedido por WhatsApp.">
+    <title>Pedido | Panda Bubble Tea</title>
+    <link rel="icon" type="image/svg+xml" href="/src/assets/icons/logoPBT.svg">
+    <link rel="stylesheet" href="./src/css/global.css">
+    <link rel="stylesheet" href="./src/css/menu.css">
+    <link rel="stylesheet" href="./src/css/checkout.css">
+    <link rel="stylesheet" href="./src/css/modal.css">
+    <script type="module" src="./src/js/app.js"></script>
+</head>
+
+<body data-checkout-page>
+    <header>
+        <nav class="row container navbar">
+            <a href="./index.html" aria-label="Panda Bubble Tea inicio">
+                <svg class="logo" aria-hidden="true"></svg>
+            </a>
+
+            <a href="./menu.html" class="control control-primary">
+                Menú
+                <span class="icon" style="--icon: url('/src/assets/icons/ui/tea.svg')"></span>
+            </a>
+        </nav>
+    </header>
+
+    <main class="page checkout-page">
+        <section class="row page-header">
+            <a href="./menu.html">
+                <span class="icon" style="--icon: url('/src/assets/icons/navigation/rotateLeft.svg')"></span>
+            </a>
+            <h1 class="heading-l">Resumen del pedido</h1>
+        </section>
+
+        <section class="checkout-grid">
+            <section class="drink-section checkout-card" aria-labelledby="cart-heading">
+                <header class="drink-heading">
+                    <h2 class="subheading-l" id="cart-heading">Carrito</h2>
+                    <span class="sm-p" data-cart-total>C$ 0</span>
+                </header>
+
+                <p class="sm-p hidden" data-empty-cart>No hay productos en el carrito.</p>
+                <div class="cart-list" data-cart-list></div>
+
+                <div class="row checkout-actions">
+                    <a class="control" href="./menu.html">Agregar más</a>
+                    <button class="control" type="button" data-clear-cart>Vaciar carrito</button>
+                </div>
+            </section>
+
+            <section class="drink-section checkout-card" aria-labelledby="customer-heading">
+                <header class="drink-heading">
+                    <h2 class="subheading-l" id="customer-heading">Datos de entrega</h2>
+                </header>
+
+                <form class="column checkout-form" data-checkout-form>
+                    <label class="search-form checkout-field">
+                        <input class="input" type="text" name="name" placeholder="Nombre" required>
+                        <span class="icon" style="--icon: url('/src/assets/icons/forms/userId.svg')"></span>
+                    </label>
+
+                    <label class="search-form checkout-field">
+                        <input class="input" type="tel" name="phone" placeholder="WhatsApp" inputmode="numeric"
+                            pattern="[0-9\s-]{8,14}" required>
+                        <span class="icon" style="--icon: url('/src/assets/icons/forms/phone.svg')"></span>
+                    </label>
+
+                    <div class="checkout-delivery" data-delivery-select>
+                        <input type="hidden" name="delivery" value="Retiro en el local" data-delivery-input>
+                        <button class="search-form checkout-field checkout-delivery-trigger" type="button"
+                            data-delivery-trigger aria-haspopup="listbox" aria-expanded="false">
+                            <span data-delivery-label>Retiro en el local</span>
+                            <span class="icon checkout-select-icon"
+                                style="--icon: url('/src/assets/icons/navigation/keyDown.svg')" aria-hidden="true"></span>
+                        </button>
+
+                        <div class="checkout-delivery-options hidden" role="listbox" data-delivery-options>
+                            <button type="button" role="option" data-delivery-option value="Retiro en el local"
+                                aria-selected="true">Retiro en el local</button>
+                            <button type="button" role="option" data-delivery-option value="Entrega a Domicilio"
+                                aria-selected="false">Entrega a Domicilio</button>
+                        </div>
+                    </div>
+
+                    <label class="search-form checkout-field">
+                        <input class="input" type="text" name="address" placeholder="Referencia o dirección">
+                        <span class="icon" style="--icon: url('/src/assets/icons/forms/location.svg')"></span>
+                    </label>
+
+                    <p class="sm-p" data-checkout-note>Confirmaremos disponibilidad y entrega por WhatsApp.</p>
+
+                    <button class="control control-primary checkout-submit" type="submit" data-submit-order>
+                        Enviar por WhatsApp
+                        <span class="icon" style="--icon: url('/src/assets/icons/social/whatsapp.svg')"></span>
+                    </button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+</body>
+
+</html>
