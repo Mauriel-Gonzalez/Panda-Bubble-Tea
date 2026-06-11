@@ -24,6 +24,10 @@
     justify-content: space-between;
 }
 
+.checkout-customer-card {
+    order: -1;
+}
+
 .cart-list {
     display: grid;
     gap: var(--stack-space);
@@ -215,5 +219,9 @@
     .checkout-grid {
         grid-template-columns: minmax(420px, 1fr) minmax(280px, 0.62fr);
         align-items: start;
+    }
+
+    .checkout-customer-card {
+        order: 0;
     }
 }

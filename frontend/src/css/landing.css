@@ -1,16 +1,15 @@
 .navbar {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     background-color: rgb(239 232 218 / 92%);
     backdrop-filter: blur(14px);
 }
 
 .navbar .tabs {
-    order: 3;
     display: flex;
-    width: 100%;
+    width: auto;
     justify-content: center;
-    gap: 1rem;
-    padding-block-start: var(--padding-s);
+    gap: clamp(0.75rem, 3.5vw, 2rem);
+    padding-block-start: 0;
     overflow-x: auto;
     scrollbar-width: none;
     list-style-type: none;
@@ -430,7 +429,6 @@
     }
 
     .navbar .tabs {
-        order: initial;
         width: max-content;
         gap: 2rem;
         padding-block-start: 0;

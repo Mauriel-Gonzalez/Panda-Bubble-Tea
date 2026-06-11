@@ -155,8 +155,13 @@
     outline: none;
 }
 
-.categories .control-primary,
-.categories .is-active {
+.categories .control.control-primary,
+.categories .control.is-active,
+.categories .control.control-primary:hover,
+.categories .control.control-primary:focus-visible,
+.categories .control.is-active:hover,
+.categories .control.is-active:focus-visible {
+    border-color: transparent;
     background-color: var(--menu-green);
     color: #fff;
 }
@@ -496,7 +501,7 @@
 .mobile-order-bar {
     position: fixed;
     right: 1rem;
-    bottom: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
     left: 1rem;
     z-index: 24;
     display: flex;

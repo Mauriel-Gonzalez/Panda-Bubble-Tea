@@ -381,6 +381,7 @@ function initMenuCart() {
     panel.innerHTML = createCartMarkup(items)
     mobileDialog.innerHTML = createCartMarkup(items, { isDialog: true })
     mobileBar.classList.toggle('hidden', count === 0)
+    document.body.classList.toggle('has-mobile-order-bar', count > 0)
 
     if (mobileBarLabel) {
       mobileBarLabel.textContent = `Ver pedido (${count})`

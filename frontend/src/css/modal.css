@@ -23,7 +23,7 @@
 .toast-stack {
     position: fixed;
     right: var(--padding-l);
-    bottom: var(--padding-l);
+    bottom: calc(var(--padding-l) + env(safe-area-inset-bottom));
     z-index: 30;
     display: grid;
     gap: var(--gap-m);
@@ -37,6 +37,16 @@
     background-color: #fffaf4;
     box-shadow: 0 16px 34px rgb(60 60 60 / 14%);
     font-weight: var(--fw-medium);
+}
+
+@media (width < 980px) {
+    body.has-mobile-order-bar .toast-stack,
+    body:has(.mobile-order-bar:not(.hidden)) .toast-stack {
+        right: 1rem;
+        bottom: calc(5.5rem + env(safe-area-inset-bottom));
+        left: 1rem;
+        width: auto;
+    }
 }
 
 .custom-modal {
