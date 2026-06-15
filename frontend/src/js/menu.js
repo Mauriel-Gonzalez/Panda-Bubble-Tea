@@ -1,6 +1,7 @@
 const DEFAULT_EXTRA_TOPPING_PRICE = 30
 const DEFAULT_INCLUDED_TOPPINGS = 1
 const ALL_CATEGORIES = 'all'
+const CHECKOUT_INFO_MODAL_ANIMATION_MS = 280
 
 function escapeHtml(value) {
   const element = document.createElement('span')
@@ -359,6 +360,117 @@ function createCartMarkup(items, { isDialog = false } = {}) {
   `
 }
 
+function openCheckoutInfoModal({ onContinue, onBack } = {}) {
+  if (document.querySelector('[data-checkout-info-modal]')) {
+    return
+  }
+
+  const previousFocus = document.activeElement
+  const modal = document.createElement('div')
+
+  modal.className = 'checkout-info-modal'
+  modal.dataset.checkoutInfoModal = ''
+  modal.setAttribute('role', 'dialog')
+  modal.setAttribute('aria-modal', 'true')
+  modal.setAttribute('aria-labelledby', 'checkout-info-title')
+  modal.innerHTML = `
+    <div class="checkout-info-card" role="document">
+      <div class="checkout-info-copy">
+        <h2 class="subheading-l" id="checkout-info-title">Confirmar pedido</h2>
+        <p>Procesamos cada pedido de forma personalizada. El costo de envío se calcula según tu ubicación y nuestro equipo te lo confirmará al recibir tu pedido por WhatsApp, antes de finalizar la entrega.</p>
+        <p class="sm-p">Te contactaremos para confirmar todos los detalles antes de preparar tu pedido.</p>
+      </div>
+
+      <div class="checkout-info-actions">
+        <button class="control checkout-info-back" type="button" data-checkout-info-back>Volver al carrito</button>
+        <button class="control control-primary checkout-info-continue" type="button" data-checkout-info-continue>Continuar</button>
+      </div>
+    </div>
+  `
+
+  const backButton = modal.querySelector('[data-checkout-info-back]')
+  const continueButton = modal.querySelector('[data-checkout-info-continue]')
+  let isClosing = false
+
+  const getFocusableElements = () => [
+    ...modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+  ].filter((element) => !element.disabled)
+
+  const closeModal = (callback) => {
+    if (isClosing) {
+      return
+    }
+
+    isClosing = true
+    modal.classList.remove('is-open')
+    modal.classList.add('is-closing')
+    document.removeEventListener('keydown', handleKeydown)
+
+    window.setTimeout(() => {
+      modal.remove()
+      document.body.classList.remove('has-checkout-info-modal')
+
+      if (callback) {
+        callback()
+        return
+      }
+
+      previousFocus?.focus?.({
+        preventScroll: true
+      })
+    }, CHECKOUT_INFO_MODAL_ANIMATION_MS)
+  }
+
+  function handleKeydown(event) {
+    if (event.key === 'Escape') {
+      event.preventDefault()
+      closeModal(onBack)
+      return
+    }
+
+    if (event.key !== 'Tab') {
+      return
+    }
+
+    const focusableElements = getFocusableElements()
+    const firstElement = focusableElements[0]
+    const lastElement = focusableElements.at(-1)
+
+    if (!firstElement || !lastElement) {
+      return
+    }
+
+    if (event.shiftKey && document.activeElement === firstElement) {
+      event.preventDefault()
+      lastElement.focus()
+    }
+
+    if (!event.shiftKey && document.activeElement === lastElement) {
+      event.preventDefault()
+      firstElement.focus()
+    }
+  }
+
+  backButton.addEventListener('click', () => closeModal(onBack))
+  continueButton.addEventListener('click', () => closeModal(onContinue))
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) {
+      closeModal(onBack)
+    }
+  })
+
+  document.body.append(modal)
+  document.body.classList.add('has-checkout-info-modal')
+  document.addEventListener('keydown', handleKeydown)
+
+  window.requestAnimationFrame(() => {
+    modal.classList.add('is-open')
+    continueButton.focus({
+      preventScroll: true
+    })
+  })
+}
+
 function initMenuCart() {
   const cart = window.PandaCart
   const panel = document.querySelector('[data-menu-cart]')
@@ -413,8 +525,31 @@ function initMenuCart() {
   document.addEventListener('click', (event) => {
     const checkoutLink = event.target.closest('[data-menu-checkout]')
 
-    if (checkoutLink?.classList.contains('is-disabled')) {
+    if (checkoutLink) {
       event.preventDefault()
+
+      if (checkoutLink.classList.contains('is-disabled')) {
+        return
+      }
+
+      const checkoutHref = checkoutLink.href || './checkout.html'
+      const shouldReturnToMobileCart = mobileDialog.open
+
+      if (shouldReturnToMobileCart) {
+        mobileDialog.close()
+      }
+
+      openCheckoutInfoModal({
+        onContinue: () => {
+          window.location.href = checkoutHref
+        },
+        onBack: () => {
+          if (shouldReturnToMobileCart) {
+            render()
+            mobileDialog.showModal()
+          }
+        }
+      })
       return
     }
 

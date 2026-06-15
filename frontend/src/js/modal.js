@@ -155,6 +155,8 @@ export function openCustomizationModal({ defaultToppings = 'Tapioca', product = 
     const extraPrice = dialog.querySelector('[data-extra-price]')
     const totalPrice = dialog.querySelector('[data-total-price]')
     const submitTotal = dialog.querySelector('[data-submit-total]')
+    const submitButton = dialog.querySelector('[data-submit-customization]')
+    let isResolved = false
 
     const getSelectedSize = () => dialog.querySelector('input[name="size"]:checked')
     const getSelectedToppings = () => [...dialog.querySelectorAll('input[name="toppings"]:checked')]
@@ -187,9 +189,40 @@ export function openCustomizationModal({ defaultToppings = 'Tapioca', product = 
     }
 
     const closeModal = (value) => {
-      dialog.close()
+      if (isResolved) {
+        return
+      }
+
+      isResolved = true
+
+      if (dialog.open) {
+        dialog.close()
+      }
+
       dialog.remove()
       resolve(value)
+    }
+
+    const submitCustomization = (event) => {
+      event?.preventDefault()
+
+      if (submitButton) {
+        submitButton.disabled = true
+      }
+
+      const price = updatePrice()
+
+      closeModal({
+        size: price.selectedSize?.value || 'Regular',
+        toppings: price.selectedToppings,
+        quantity,
+        price: price.unitPrice,
+        basePrice: price.selectedBasePrice,
+        toppingExtraCount: price.extraToppings,
+        toppingExtraPrice: extraToppingPrice,
+        toppingExtraTotal: price.toppingExtraTotal,
+        includedToppings
+      })
     }
 
     dialog.addEventListener('click', (event) => {
@@ -214,23 +247,8 @@ export function openCustomizationModal({ defaultToppings = 'Tapioca', product = 
 
     form.addEventListener('change', updatePrice)
 
-    form.addEventListener('submit', (event) => {
-      event.preventDefault()
-
-      const price = updatePrice()
-
-      closeModal({
-        size: price.selectedSize?.value || 'Regular',
-        toppings: price.selectedToppings,
-        quantity,
-        price: price.unitPrice,
-        basePrice: price.selectedBasePrice,
-        toppingExtraCount: price.extraToppings,
-        toppingExtraPrice: extraToppingPrice,
-        toppingExtraTotal: price.toppingExtraTotal,
-        includedToppings
-      })
-    })
+    submitButton?.addEventListener('click', submitCustomization)
+    form.addEventListener('submit', submitCustomization)
 
     dialog.addEventListener('cancel', (event) => {
       event.preventDefault()

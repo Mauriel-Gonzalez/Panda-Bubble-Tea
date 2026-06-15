@@ -158,9 +158,12 @@
 }
 
 .contact-option a {
+    display: inline-flex;
+    align-items: center;
     grid-column: 1 / -1;
     align-self: end;
     width: max-content;
+    min-height: 44px;
     color: var(--color-primary-text);
     font-weight: var(--fw-semi);
     text-decoration-color: rgb(171 132 95 / 36%);

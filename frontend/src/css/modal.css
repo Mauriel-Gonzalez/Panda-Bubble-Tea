@@ -224,12 +224,27 @@
 }
 
 .modal-actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
     justify-content: end;
     flex-wrap: wrap;
+    margin-inline: calc(var(--padding-l) * -1);
+    margin-block-end: calc(var(--padding-l) * -1);
+    padding: var(--padding-m) var(--padding-l) var(--padding-l);
+    border-top: 1px solid var(--modal-border);
+    background:
+        linear-gradient(180deg, rgb(247 237 227 / 84%) 0%, var(--modal-surface) 42%);
+    backdrop-filter: blur(8px);
 }
 
 .modal-submit {
     justify-content: center;
+}
+
+.modal-submit:disabled {
+    cursor: progress;
+    opacity: 0.72;
 }
 
 .modal-submit [data-submit-total] {
