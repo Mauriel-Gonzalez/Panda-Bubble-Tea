@@ -294,11 +294,21 @@ function buildWhatsAppMessage(order) {
     groups.get(category).push(item)
     return groups
   }, new Map())
+  const deliveryMethod = order.customer.delivery || 'Retiro en el local'
+  const isPickup = normalizeText(deliveryMethod) === 'retiro en el local'
+  const customerLines = [
+    '',
+    `Nombre: ${order.customer.name}`,
+    `WhatsApp: ${order.customer.phone}`,
+    `Entrega: ${deliveryMethod}`
+  ]
+
+  if (!isPickup) {
+    customerLines.push(`Referencia: ${order.customer.address || 'Coordinar por WhatsApp'}`)
+  }
 
   const lines = [
-    'Hola Panda Bubble Tea, quiero hacer este pedido:',
-    '',
-    'Pedido:',
+    'Hola Panda Bubble Tea, quiero realizar este pedido:',
     ...[...groupedItems.entries()].flatMap(([category, items]) => [
       '',
       `${category}:`,
@@ -320,13 +330,7 @@ function buildWhatsAppMessage(order) {
         ]
       })
     ]),
-    '',
-    `Total: ${formatCurrency(order.total)}`,
-    '',
-    `Nombre: ${order.customer.name}`,
-    `WhatsApp: ${order.customer.phone}`,
-    `Entrega: ${order.customer.delivery}`,
-    `Referencia: ${order.customer.address || 'Coordinar por WhatsApp'}`
+    ...customerLines
   ]
 
   return lines.join('\n')
